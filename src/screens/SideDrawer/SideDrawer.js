@@ -1,11 +1,17 @@
 import React, { Component } from "react";
-import { View, Text, Dimensions, StyleSheet,Button } from "react-native";
+import { View, Text, Dimensions, StyleSheet,TouchableOpacity } from "react-native";
 
+import { Navigation } from "react-native-navigation";
 
 class SideDrawer extends Component {
 
   logouthandler = () =>{
-    
+    Navigation.startSingleScreenApp({
+      screen: {
+        screen: "awesome-places.AuthScreen",
+        title: "Login"
+      }
+    });
   }
 
 
@@ -17,7 +23,10 @@ class SideDrawer extends Component {
           { width: Dimensions.get("window").width * 0.8 }
         ]}
       >
-       {/* <Icon name="md-menu" size={30} color="#3B5699" /> */}
+         <Text style={styles.menu}
+              onPress={this.logouthandler}>
+          Logout
+        </Text>
       </View>
     );
   }
@@ -28,7 +37,15 @@ const styles = StyleSheet.create({
     paddingTop: 22,
     backgroundColor: "white",
     flex: 1
-  }
+  },
+  menu:{
+    
+    flexDirection: 'row',
+    fontSize: 20,
+    color: '#595856',
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  } 
 });
 
 export default SideDrawer;

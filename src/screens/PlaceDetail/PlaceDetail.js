@@ -21,8 +21,8 @@ class PlaceDetail extends Component {
   }
 
   state = {
-    PickedImage:{
-        uri : "https://i.stack.imgur.com/l60Hf.png"
+    image:{
+        uri : "https://www.mountaineers.org/activities/routes-and-places/default-route-place/activities-and-routes-places-default-image/image"
     }
   }
 
@@ -34,10 +34,10 @@ class PlaceDetail extends Component {
             console.log("Error",res.error);
         }else{
             this.setState({
-                PickedImage:{uri : res.uri}
+                image:{uri : res.uri}
             });
 
-            console.log(this.state.PickedImage);
+            console.log(this.state.image);
         }
     });
 }
@@ -46,7 +46,7 @@ class PlaceDetail extends Component {
     return (
       <View style={styles.container}>
         <View>
-          <Image source={this.state.PickedImage} style={styles.placeImage} />
+          <Image source={this.state.image} style={styles.placeImage} />
           <Text style={styles.placeName}>{this.props.selectedPlace.name}</Text>
         </View>
         <View>

@@ -22,7 +22,7 @@ class FindPlaceScreen extends Component {
 
   itemSelectedHandler = key => {
 
-      // console.log(this.props.places);
+    
     const selPlace = this.props.places.find(place => {
       return place.key === key;
     });
