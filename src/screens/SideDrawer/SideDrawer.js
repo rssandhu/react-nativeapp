@@ -1,7 +1,14 @@
 import React, { Component } from "react";
-import { View, Text, Dimensions, StyleSheet } from "react-native";
+import { View, Text, Dimensions, StyleSheet,Button } from "react-native";
+
 
 class SideDrawer extends Component {
+
+  logouthandler = () =>{
+    
+  }
+
+
   render() {
     return (
       <View
@@ -10,7 +17,7 @@ class SideDrawer extends Component {
           { width: Dimensions.get("window").width * 0.8 }
         ]}
       >
-        <Text >Dashboard</Text>
+       {/* <Icon name="md-menu" size={30} color="#3B5699" /> */}
       </View>
     );
   }

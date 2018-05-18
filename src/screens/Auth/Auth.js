@@ -13,30 +13,34 @@ export default class Login extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            username:'',
-            password:''     
-         };
+      
     //    this.handlers = createHandlers(this.props.dispatch);
     }
 
-    
+    state = {
+        username:'',
+        password:''     
+     };
 
     handleChangeInput(stateName, text) {   
         this.setState({
             [stateName]: text
         })
 
-        console.log(state);
+        console.log(this.state);
     }
 
 
 
     loginHandler = (state) => {
 
-          Alert.alert('Login');
-       // console.log('Auth screen',this.state);
-        startMainTabs();
+        if(this.state.username == 'demo' && this.state.password == 'demo123')
+        {
+            startMainTabs();
+        }else{
+            Alert.alert('Please Check The Details.');
+        }
+        
     }
   render() {
     return (
@@ -46,8 +50,9 @@ export default class Login extends Component {
                 <Label text="Username or Email" />
                 <TextInput
                     style={styles.textInput}
-                    value={this.state.Username}
-                    onChange={this.handleChangeInput.bind(this, 'username')}
+                    value={this.state.username}
+                    // onChange={this.handleChangeInput.bind(this, 'username')}
+                    onChange={(event) => this.handleChangeInput('username' , event.nativeEvent.text )}
                 />
             </Container>
             <Container>
@@ -56,7 +61,8 @@ export default class Login extends Component {
                     secureTextEntry={true}
                     style={styles.textInput}
                     value={this.state.password}
-                    onChange={this.handleChangeInput.bind(this, 'password')}
+                    // onChange={this.handleChangeInput.bind(this, 'password')}
+                    onChange={(event) => this.handleChangeInput('password' , event.nativeEvent.text )}
                 />
             </Container>
             <Container>
