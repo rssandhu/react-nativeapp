@@ -1,0 +1,6 @@
+run react app :  react-native run-android
+npm start -- --reset-cache   //to reset cache
+
+cd android && ./gradlew clean && cd ..
+
+cd android && gradlew assembleDebug --info // to debug build 
