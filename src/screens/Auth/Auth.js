@@ -144,6 +144,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#34A853'
     },
     footer: {
-       marginTop: 100
+       marginTop: 40
     }
 });
