@@ -19,7 +19,7 @@ const startTabs = () => {
                     navigatorButtons: {
                         leftButtons: [
                             {
-                                icon: sources[2],
+                                icon: sources[1],
                                 title: "Menu",
                                 id: "sideDrawerToggle"
                             }

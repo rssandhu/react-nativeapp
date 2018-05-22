@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.airbnb.android.react.maps.MapsPackage;
 
+import com.magus.fblogin.FacebookLoginPackage;
+
 public class MainApplication extends NavigationApplication  {
 
   // private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -65,7 +67,8 @@ public class MainApplication extends NavigationApplication  {
              // eg. new VectorIconsPackage()
              new VectorIconsPackage(),
              new MapsPackage(),
-             new ImagePickerPackage()
+             new ImagePickerPackage(),
+             new FacebookLoginPackage()
          );
      }
 
